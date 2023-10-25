@@ -1,23 +1,6 @@
 <script setup>
   import { supabase } from '../components/lib/supabaseClient'
 
-  async function signUpExample() {
-      const { data, error } = await supabase.auth.signUp({
-          email: 'matt.rau@usu.edu',
-          password: 'password',
-          options: { 
-              data: {
-                  usertype: 1, 
-                  username: 'username', 
-                  firstname: 'Matt', 
-                  lastname: 'Rau', 
-                  email: 'matt.rau@usu.edu',
-              }
-          }
-      })
-  }; 
-
-
   async function registerUser(userEmail, userPassword, accountType, userName, firstName, lastName) {
     const { data, error } = await supabase.auth.signUp({
           email: userEmail,
